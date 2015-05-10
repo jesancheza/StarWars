@@ -20,10 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Crear la UIWindow
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        var vc = JESACharactersTableViewController(nibName: "JESACharactersTableViewController", bundle:nil);
+        // Crear los ViewController
+        var vcU = JESACharactersTableViewController(nibName: "JESACharactersTableViewController", bundle:nil);
+        var vcC = JESACharacterViewController(model: vcU.model.imperials[0])
+        
+        // Crear los navigationViewController
+        var navU = UINavigationController(rootViewController: vcU)
+        var navC = UINavigationController(rootViewController: vcC)
+        
+        // Creamos el combinador
+        var splitVC = UISplitViewController()
+        splitVC.viewControllers = [navU, navC]
         
         // Asignarlo como root
-        window?.rootViewController = vc
+        window?.rootViewController = splitVC
         
         // Mostrarlo
         window?.makeKeyAndVisible()
