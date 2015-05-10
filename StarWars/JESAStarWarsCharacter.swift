@@ -20,7 +20,10 @@ class JESAStarWarsCharacter {
     // Inits
     init(){}                // default init
     
-    convenience init(name String, alias String, image UIImage, sound NSData, characterURL NSURL){
+    // Designado: crea un personaje
+    convenience init(name: String, alias: String, image: UIImage, sound: NSData, characterURL: NSURL){
+        self.init()
+        
         self.name = name
         self.alias = alias
         self.image = image
