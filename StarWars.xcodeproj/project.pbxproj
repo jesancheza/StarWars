@@ -28,6 +28,8 @@
 		EDD5506C1AFF6A2F0084FAD1 /* tarkin.caf in Resources */ = {isa = PBXBuildFile; fileRef = EDD550651AFF6A2F0084FAD1 /* tarkin.caf */; };
 		EDD5506D1AFF6A2F0084FAD1 /* vader.caf in Resources */ = {isa = PBXBuildFile; fileRef = EDD550661AFF6A2F0084FAD1 /* vader.caf */; };
 		EDD5506E1AFF6A2F0084FAD1 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = EDD550671AFF6A2F0084FAD1 /* yoda.caf */; };
+		EDD550721AFF6AAA0084FAD1 /* JESACharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD550701AFF6AAA0084FAD1 /* JESACharactersTableViewController.swift */; };
+		EDD550731AFF6AAA0084FAD1 /* JESACharactersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD550711AFF6AAA0084FAD1 /* JESACharactersTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		EDD550651AFF6A2F0084FAD1 /* tarkin.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tarkin.caf; sourceTree = "<group>"; };
 		EDD550661AFF6A2F0084FAD1 /* vader.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = vader.caf; sourceTree = "<group>"; };
 		EDD550671AFF6A2F0084FAD1 /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
+		EDD550701AFF6AAA0084FAD1 /* JESACharactersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JESACharactersTableViewController.swift; sourceTree = "<group>"; };
+		EDD550711AFF6AAA0084FAD1 /* JESACharactersTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JESACharactersTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		EDD5502A1AFE62BC0084FAD1 /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
+				EDD5506F1AFF6A660084FAD1 /* Controllers */,
 				EDD550521AFF681B0084FAD1 /* Resources */,
 				EDD5502D1AFE62BC0084FAD1 /* AppDelegate.swift */,
 				EDD5502F1AFE62BC0084FAD1 /* ViewController.swift */,
@@ -171,6 +176,15 @@
 				EDD550591AFF6A1D0084FAD1 /* yoda.jpg */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDD5506F1AFF6A660084FAD1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDD550701AFF6AAA0084FAD1 /* JESACharactersTableViewController.swift */,
+				EDD550711AFF6AAA0084FAD1 /* JESACharactersTableViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +277,7 @@
 				EDD550601AFF6A1D0084FAD1 /* yoda.jpg in Resources */,
 				EDD5505D1AFF6A1D0084FAD1 /* palpatine.jpg in Resources */,
 				EDD5506B1AFF6A2F0084FAD1 /* r2-d2.caf in Resources */,
+				EDD550731AFF6AAA0084FAD1 /* JESACharactersTableViewController.xib in Resources */,
 				EDD5506D1AFF6A2F0084FAD1 /* vader.caf in Resources */,
 				EDD5505A1AFF6A1D0084FAD1 /* c3po.jpg in Resources */,
 				EDD550351AFE62BC0084FAD1 /* Images.xcassets in Resources */,
@@ -289,6 +304,7 @@
 				EDD550511AFF58DD0084FAD1 /* JESAStarWarsUniverse.swift in Sources */,
 				EDD550301AFE62BC0084FAD1 /* ViewController.swift in Sources */,
 				EDD5504E1AFF58BB0084FAD1 /* JESAStarWarsCharacter.swift in Sources */,
+				EDD550721AFF6AAA0084FAD1 /* JESACharactersTableViewController.swift in Sources */,
 				EDD5502E1AFE62BC0084FAD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

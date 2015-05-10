@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Crear la UIWindow
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        var vc = JESACharactersTableViewController(nibName: "JESACharactersTableViewController", bundle:nil);
+        
+        // Asignarlo como root
+        window?.rootViewController = vc
+        
+        // Mostrarlo
+        window?.makeKeyAndVisible()
         return true
     }
 
