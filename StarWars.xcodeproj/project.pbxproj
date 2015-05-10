@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		EDD5502E1AFE62BC0084FAD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5502D1AFE62BC0084FAD1 /* AppDelegate.swift */; };
 		EDD550301AFE62BC0084FAD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5502F1AFE62BC0084FAD1 /* ViewController.swift */; };
-		EDD550331AFE62BC0084FAD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD550311AFE62BC0084FAD1 /* Main.storyboard */; };
 		EDD550351AFE62BC0084FAD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD550341AFE62BC0084FAD1 /* Images.xcassets */; };
 		EDD550381AFE62BC0084FAD1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD550361AFE62BC0084FAD1 /* LaunchScreen.xib */; };
 		EDD550441AFE62BC0084FAD1 /* StarWarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD550431AFE62BC0084FAD1 /* StarWarsTests.swift */; };
+		EDD5504E1AFF58BB0084FAD1 /* JESAStarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5504D1AFF58BB0084FAD1 /* JESAStarWarsCharacter.swift */; };
+		EDD550511AFF58DD0084FAD1 /* JESAStarWarsUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD550501AFF58DD0084FAD1 /* JESAStarWarsUniverse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +31,13 @@
 		EDD5502C1AFE62BC0084FAD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDD5502D1AFE62BC0084FAD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD5502F1AFE62BC0084FAD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EDD550321AFE62BC0084FAD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDD550341AFE62BC0084FAD1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EDD550371AFE62BC0084FAD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EDD5503D1AFE62BC0084FAD1 /* StarWarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD550421AFE62BC0084FAD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDD550431AFE62BC0084FAD1 /* StarWarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsTests.swift; sourceTree = "<group>"; };
+		EDD5504D1AFF58BB0084FAD1 /* JESAStarWarsCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JESAStarWarsCharacter.swift; sourceTree = "<group>"; };
+		EDD550501AFF58DD0084FAD1 /* JESAStarWarsUniverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JESAStarWarsUniverse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +81,10 @@
 			children = (
 				EDD5502D1AFE62BC0084FAD1 /* AppDelegate.swift */,
 				EDD5502F1AFE62BC0084FAD1 /* ViewController.swift */,
-				EDD550311AFE62BC0084FAD1 /* Main.storyboard */,
 				EDD550341AFE62BC0084FAD1 /* Images.xcassets */,
 				EDD550361AFE62BC0084FAD1 /* LaunchScreen.xib */,
 				EDD5502B1AFE62BC0084FAD1 /* Supporting Files */,
+				EDD5504F1AFF58BF0084FAD1 /* Models */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";
@@ -110,6 +112,15 @@
 				EDD550421AFE62BC0084FAD1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDD5504F1AFF58BF0084FAD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDD5504D1AFF58BB0084FAD1 /* JESAStarWarsCharacter.swift */,
+				EDD550501AFF58DD0084FAD1 /* JESAStarWarsUniverse.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +203,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD550331AFE62BC0084FAD1 /* Main.storyboard in Resources */,
 				EDD550381AFE62BC0084FAD1 /* LaunchScreen.xib in Resources */,
 				EDD550351AFE62BC0084FAD1 /* Images.xcassets in Resources */,
 			);
@@ -212,7 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD550511AFF58DD0084FAD1 /* JESAStarWarsUniverse.swift in Sources */,
 				EDD550301AFE62BC0084FAD1 /* ViewController.swift in Sources */,
+				EDD5504E1AFF58BB0084FAD1 /* JESAStarWarsCharacter.swift in Sources */,
 				EDD5502E1AFE62BC0084FAD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,14 +248,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EDD550311AFE62BC0084FAD1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EDD550321AFE62BC0084FAD1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EDD550361AFE62BC0084FAD1 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
