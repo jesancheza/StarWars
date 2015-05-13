@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JESACharacterViewController" customModule="StarWars" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="yD1-fn-m50" id="urd-ax-Np1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +14,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="iQN-7n-O4z">
+                    <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Item" systemItem="play" id="Fba-5N-iZH">
+                            <connections>
+                                <action selector="playSound:" destination="-1" id="SZ9-q1-T3N"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Nwh-CY-dBW"/>
+                        <barButtonItem title="Wiki" id="Nhn-E2-NjI">
+                            <connections>
+                                <action selector="showWiki:" destination="-1" id="caD-qd-Tax"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yD1-fn-m50">
+                    <rect key="frame" x="0.0" y="68" width="768" height="912"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="370" y="433"/>
         </view>
     </objects>
