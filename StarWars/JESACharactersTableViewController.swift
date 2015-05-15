@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import Foundation
 
-class JESACharactersTableViewController: UITableViewController {
+// MARK: Protocolo delegado StarWarsUniverseViewControllerDelegate
+protocol JESACharactersTableViewControllerDelegate{
+    func starWarsViewController(chvc: JESACharactersTableViewController,
+        didSelectCharacter: JESAStarWarsCharacter)
+}
+
+class JESACharactersTableViewController: UITableViewController, JESACharactersTableViewControllerDelegate {
+    
+    // Constantes
+    let IMPERIALS = 0
+    let REBLES = 1
     
     var model = JESAStarWarsUniverse()
+    
+    var delegate : JESACharactersTableViewControllerDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +53,7 @@ class JESACharactersTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // Return the number of rows in the section.
-        if section == 0{
+        if section == IMPERIALS{
             return model.countImperials
         }else{
             return model.countRebels
@@ -51,7 +65,7 @@ class JESACharactersTableViewController: UITableViewController {
         
         var character = JESAStarWarsCharacter()
         
-        if indexPath.section == 0{
+        if indexPath.section == IMPERIALS{
             character = model.imperials[indexPath.row]
         }else{
             character = model.rebels[indexPath.row]
@@ -72,11 +86,33 @@ class JESACharactersTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        if section == 0{
+        if section == IMPERIALS{
             return "Imperials"
         }else{
             return "Rebels"
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var character = JESAStarWarsCharacter()
+        
+        if indexPath.section == IMPERIALS{
+            character = model.imperials[indexPath.row]
+        }else{
+            character = model.rebels[indexPath.row]
+        }
+    
+        self.delegate?.starWarsViewController(self, didSelectCharacter: character)
+        
+    }
+    
+    // MARK: - JESACharactersTableViewControllerDelegate
+    func starWarsViewController(chvc: JESACharactersTableViewController,
+        didSelectCharacter: JESAStarWarsCharacter){
+        
+            
+            
     }
     
 }

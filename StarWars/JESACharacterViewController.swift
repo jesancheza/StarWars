@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JESACharacterViewController: UIViewController , UISplitViewControllerDelegate{
+class JESACharacterViewController: UIViewController , UISplitViewControllerDelegate, JESACharactersTableViewControllerDelegate{
     
     var model = JESAStarWarsCharacter()
     
@@ -64,6 +64,16 @@ class JESACharacterViewController: UIViewController , UISplitViewControllerDeleg
         }
     }
     
+    // MARK: - JESACharactersTableViewControllerDelegate
+    func starWarsViewController(swvc: JESACharactersTableViewController,
+        didSelectCharacter: JESAStarWarsCharacter){
+        
+        // Cambiamos la imagen
+        self.imageView.image = didSelectCharacter.image
+        
+        // Sincronizamos el modelo
+        self.model = didSelectCharacter
+    }
     
     /*
     // MARK: - Navigation
