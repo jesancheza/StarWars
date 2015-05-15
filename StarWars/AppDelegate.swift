@@ -22,7 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Crear los ViewController
         var vcU = JESACharactersTableViewController(nibName: "JESACharactersTableViewController", bundle:nil);
-        var vcC = JESACharacterViewController(model: vcU.model.imperials[0])
+        
+        // Recuperamos el personaje seleccionado si lo hay
+        var characterSelected : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        // Coordenadas por defecto
+        var coords = [0,0]
+        
+        var character : JESAStarWarsCharacter = JESAStarWarsCharacter()
+        
+        if let lastCharacter = characterSelected.objectForKey("lastCharacter") as? Array<Int>{
+            if lastCharacter[0] == 0{
+                character = vcU.model.imperials[lastCharacter[1]]
+            }else{
+                character = vcU.model.rebels[lastCharacter[1]]
+            }
+        }else{
+            character = vcU.model.imperials[0]
+        }
+        
+        var vcC = JESACharacterViewController(model: character)
         
         // Crear los navigationViewController
         var navU = UINavigationController(rootViewController: vcU)

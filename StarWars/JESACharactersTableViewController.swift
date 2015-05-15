@@ -102,9 +102,17 @@ class JESACharactersTableViewController: UITableViewController, JESACharactersTa
         }else{
             character = model.rebels[indexPath.row]
         }
-    
+        
+        // Llamamos al delegado para cargar el personaje
         self.delegate?.starWarsViewController(self, didSelectCharacter: character)
         
+        // Guardamos el último personaje seleccionado
+        var characterSelected : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        var coords : Array<Int> = [indexPath.section, indexPath.row]
+        characterSelected.setObject(coords, forKey: "lastCharacter")
+        
+        characterSelected.synchronize()
     }
     
     // MARK: - JESACharactersTableViewControllerDelegate
