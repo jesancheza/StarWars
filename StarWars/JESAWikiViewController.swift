@@ -32,6 +32,8 @@ class JESAWikiViewController: UIViewController, UIWebViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        edgesForExtendedLayout = UIRectEdge.None
+        
         wikiView.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "characterChangeInUniverse:", name: "didChangeCharacter", object: nil)
@@ -85,6 +87,15 @@ class JESAWikiViewController: UIViewController, UIWebViewDelegate {
         self.activityView.hidden = true
         self.activityView.stopAnimating()
         
+    }
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        if navigationType == UIWebViewNavigationType.LinkClicked || navigationType == UIWebViewNavigationType.FormSubmitted {
+            return false
+        }else{
+            return true
+        }
     }
 
 }
