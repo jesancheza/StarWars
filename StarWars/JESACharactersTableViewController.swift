@@ -106,6 +106,15 @@ class JESACharactersTableViewController: UITableViewController, JESACharactersTa
         // Llamamos al delegado para cargar el personaje
         self.delegate?.starWarsViewController(self, didSelectCharacter: character)
         
+        // Enviamos la notificación
+        let notification : NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        
+        var param = Dictionary<String, JESAStarWarsCharacter>()
+        
+        param = ["characterSelected" : character]
+        
+        notification.postNotificationName("didChangeCharacter", object: self, userInfo: param)
+        
         // Guardamos el último personaje seleccionado
         var characterSelected : NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
