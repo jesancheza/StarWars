@@ -78,9 +78,16 @@ class JESACharactersTableViewController: UITableViewController, JESACharactersTa
         // Configure the cell...
         
         cell.textLabel?.text = character.alias
-        cell.imageView?.image = character.image
         cell.detailTextLabel?.text = character.name
-
+        cell.imageView?.image = character.image
+        
+        /*if let img = character.image{
+            cell.imageView!.layer.cornerRadius = cell.imageView!.frame.size.width / 2;
+            cell.imageView!.clipsToBounds = true;
+            cell.imageView!.image = img;
+            
+        }*/
+        
         return cell
     }
 
