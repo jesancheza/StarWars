@@ -82,6 +82,8 @@ class JESACharacterViewController: UIViewController , UISplitViewControllerDeleg
         // Cambiamos la imagen
         self.imageView.image = didSelectCharacter.image
         
+        self.title = didSelectCharacter.alias
+            
         // Sincronizamos el modelo
         self.model = didSelectCharacter
     }
