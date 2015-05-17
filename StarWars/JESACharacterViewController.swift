@@ -7,19 +7,30 @@
 //
 
 import UIKit
+import AVFoundation
 
 class JESACharacterViewController: UIViewController , UISplitViewControllerDelegate, JESACharactersTableViewControllerDelegate{
     
     var model = JESAStarWarsCharacter()
     
+    var player = AVAudioPlayer()
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func playSound(sender: AnyObject) {
         
+        var error:NSError?
+        
+        player = AVAudioPlayer(data: self.model.sound, error: &error)
+        
+        player.prepareToPlay()
+        player.play()
     }
     
     @IBAction func showWiki(sender: AnyObject) {
+        var wikiVC : JESAWikiViewController = JESAWikiViewController(model: self.model)
         
+        self.navigationController?.pushViewController(wikiVC, animated: true)
     }
     
     // MARK: - Init
